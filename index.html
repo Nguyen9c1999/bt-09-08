@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h1>Cau 3</h1>
+<h1 id="tieuDe"></h1>
+<input type="text" name="" id="a" > So A
+<br>
+<br>
+<input type="text" name="So B" id="b" onchange="kq()"> So B
+<br>
+
+</div>
+<br>
+<div>
+    <h1>Cau 4</h1>
+    <p id="p"></p>
+    <input type="text" name="" id="soA"> a
+    <br> <br>
+    <input type="text" name="" id="soB"> b
+    <br>
+    <br>
+    <input type="text" name="" id="soC"> c
+    <br> <br>
+    <input type="button" value="ket qua cau a" onclick="cauA()">
+    <input type="button" value="ket qua cau b" onclick="cauB()">
+    <input type="button" value="ket qua cau c" onclick="cauC()">
+    <input type="button" value="ket qua cau d" onclick="cauD()">
+    <input type="button" value="ket qua cau e" onclick="cauE()">
+
+
+
+</div>
+
+
+<script>
+    // cau 1
+    // alert("Nguyen The Nguyen")
+    // cau2
+// let a = +prompt("nhap so")
+//     let ketQua = a * a
+//     alert(ketQua)
+    // cau 3
+    // b1 tao 2 nut input
+    // b2 tao input nut an
+    // b3 tao function
+    function kq() {
+        let soA = document.getElementById("a").value
+        let sob = document.getElementById("b").value
+        let kq = soA * sob
+        document.getElementById("tieuDe").innerHTML= kq
+    }
+
+    // cau 4
+    // a)
+    var soA = document.getElementById("soA").value
+    var soB = document.getElementById("soB").value
+    function cauA(){
+        var chieuDai = document.getElementById("soA").value
+    var chuVi = +chieuDai*2
+    var dienTich = chieuDai * chieuDai
+    document.getElementById("p").innerHTML = "chu vi la " + chuVi + "  dien tich la " + dienTich
+}
+function cauB(){
+    var soA = document.getElementById("soA").value
+    var soB = document.getElementById("soB").value
+    var tongSoA = +soA*2
+    var tich = soA * soB
+    document.getElementById("p").innerHTML = "Tong A la " + tongSoA + "  tich AB " + tich
+
+}
+function cauC() {
+    var soA = document.getElementById("soA").value
+    var soB = document.getElementById("soB").value
+        var tong = 0
+        for ( i = +soA ; i<=+soB;i++){
+              tong = tong + i
+        }
+    document.getElementById("p").innerHTML = "Tong  la " + tong
+}
+function cauD(){
+    var soA = document.getElementById("soA").value
+    var theKy
+    if (soA %10 != 0){
+         theKy =Math.round( (+soA / 100 ) + 1)
+    }else {
+        theKy = Math.round((+soA/100))
+    }
+    document.getElementById("p").innerHTML = "the ky la " + theKy
+
+}
+function cauE(){
+    var soA = document.getElementById("soA").value
+    var soB = document.getElementById("soB").value
+    var soC = document.getElementById("soC").value
+    var loaiTamGiac = "tam giac"
+    if (soA==soB&&soB==soC&&soA==soC){
+        loaiTamGiac = "tam giac deu"
+    }else if((soA==soB)||(soB==soC)||(soA==soC)){
+        loaiTamGiac = "tam giac can"
+
+
+    } else {
+        loaiTamGiac = "tam giac thuong"
+    }
+    document.getElementById("p").innerHTML = "Day la :  " + loaiTamGiac
+
+}
+
+
+
+
+</script>
+</body>
+</html>
